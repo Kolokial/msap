@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^localhost/msap$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^localhost/msap$
+RewriteCond %{REQUEST_URI} !msap/
+RewriteRule (.*) /msap/$1 [L]
+
+RewriteRule ^/?$ /msap/application/index.php [L]
+RewriteRule ^css/([a-zA-Z0-9\.\-]*)$ /msap/htdocs/css/$1 [L]
